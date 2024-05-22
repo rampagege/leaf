@@ -51,6 +51,7 @@ impl RequestHeader {
         let mut rng = StdRng::from_entropy();
         let delta: i32 = rng.gen_range(0..30 * 2) - 30;
         timestamp = timestamp.wrapping_add(delta as u64);
+        println!("Generated timestamp: {}",timestamp);
         let mut mac =
             Hmac::<Md5>::new_from_slice(self.uuid.as_bytes()).map_err(|_| anyhow!("md5 failed"))?;
         let mut tmp = [0u8; 8];
