@@ -9,6 +9,7 @@ use lz_fnv::{Fnv1a, FnvHasher};
 use md5::{Digest, Md5};
 use rand::{rngs::StdRng, Rng, SeedableRng};
 use uuid::Uuid;
+use tracing::{error, info, trace, warn};
 
 use crate::session::{SocksAddr, SocksAddrWireType};
 
